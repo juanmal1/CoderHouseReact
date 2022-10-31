@@ -1,10 +1,25 @@
+
+.serch{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    margin: 7px;
+
+}
+.logo{
+    display: flex;
+    float: left;
+    text-align: center;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     border: 1px solid #e7e7e7;
-    background-image: -webkit-linear-gradient(top, #000000, rgba(119, 26, 83, 0.7450980392))
+    background-image: -webkit-linear-gradient(top, #000000, rgba(119, 26, 83, 0.7450980392));
+    
 }
 
 li {
