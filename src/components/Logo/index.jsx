@@ -4,7 +4,7 @@ const Logo = () =>{
     
     return(
     <div className='logo'>
-        <img src="CoderHouseReact\ecommerce\src\logo.svg" alt="logo" />
+        <img src="./CoderHouseReact/ecommerce/src/Logo.svg" alt="logo" />
     </div>
 )
 }
