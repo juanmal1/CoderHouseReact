@@ -1,17 +1,21 @@
 import React from "react"
+import './style.scss'
 
-const ItemDetail = ({product}) =>{
-    
+const ItemDetail = ({character}) =>{
+    console.log(character);
     
 
     return(
-        <div>
-        <h1>detalle del personaje</h1>
-        <p key={product.id}>{product.nome},
-        {product.status},{product.species},
-        {product.type},{product.gender},
-        {product.origin}</p>
-        </div>
+    <div className="item-detail">
+    <img src={character.image} alt="character"/>
+        <p key={character.id}> Name: {character.name}
+        <br/> Stock : 10
+        <br/>Status: {character.status} 
+        <br/>Species: {character.species}
+        <br/>NFT Price: 100 U$D
+        <br/><button className="boton-agregar">AGREGAR</button>
+        </p>
+    </div>
     )
 }
 

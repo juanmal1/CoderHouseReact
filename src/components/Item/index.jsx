@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import './style.scss'
 
 //Card
 const Item = ({product}) => {
@@ -10,9 +11,10 @@ const Item = ({product}) => {
     navigate(`/detail/${product.id}`)
   }
   return (
-    <div onClick={navigateDetail}>
+    <div className='card' onClick={navigateDetail}>
       <img src={product.image} alt="character"/>
-      <p key={product.id}>{product.name}</p>
+      <p key={product.id}> Name: {product.name}
+      <br/> Stock : 10</p>
     </div>
   )
 }

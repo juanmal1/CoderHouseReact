@@ -3,6 +3,7 @@ import './style.scss';
 // import rawProducts from '../../data/Products';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
+import {ClimbingBoxLoader} from 'react-spinners'
 
 export default function ItemListContainer ({greeting}) {
 
@@ -71,7 +72,7 @@ export default function ItemListContainer ({greeting}) {
                 console.log(response);
                 const data = await response.json();
                 console.log(data);
-                setProducts(data.results)
+                if (data.results) setProducts(data.results)
             } catch (error) {
                 console.log(error);
             }
@@ -89,7 +90,7 @@ export default function ItemListContainer ({greeting}) {
                 <p>{fecha}</p>
                 <button onClick={handleUpdateDate}>Actualizar la fecha</button>
             </div> */}
-            <ItemList products={products}/>
+            {products.length ? <ItemList products={products}/> : <ClimbingBoxLoader/> }
         </>
     )
 }
