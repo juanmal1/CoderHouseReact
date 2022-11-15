@@ -1,0 +1,17 @@
+@import './styles/colors.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container-dark{
+  background-image: linear-gradient(0deg, rgba(134,34,195,1) 0%, rgba(3,4,106,1) 85%);
+  width: 100%;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

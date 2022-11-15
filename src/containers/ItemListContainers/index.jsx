@@ -5,9 +5,11 @@ import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import {ClimbingBoxLoader} from 'react-spinners'
 
+
 export default function ItemListContainer ({greeting}) {
 
     const [products, setProducts] = useState([])
+
 
     const { categoryId } = useParams()
 
@@ -57,6 +59,8 @@ export default function ItemListContainer ({greeting}) {
         })()
     }, []) */
 
+
+
     useEffect(()=> {
         ( async ()=> {
             try {
@@ -77,7 +81,7 @@ export default function ItemListContainer ({greeting}) {
                 console.log(error);
             }
         })()
-    }, [categoryId])
+    }, [categoryId]);
 
     console.log(products);
 
@@ -91,6 +95,8 @@ export default function ItemListContainer ({greeting}) {
                 <button onClick={handleUpdateDate}>Actualizar la fecha</button>
             </div> */}
             {products.length ? <ItemList products={products}/> : <ClimbingBoxLoader/> }
+
+            
         </>
     )
 }

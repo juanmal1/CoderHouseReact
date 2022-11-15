@@ -1,15 +1,26 @@
-.item-detail {
+
+@import '../../styles/colors.scss';
+
+.card-detail-ligth {
     display: flex;
-    width: 100vw;
-    height: calc(100vh - 50px);
-    flex-direction: row;
+    flex-direction: column;
+    border: solid 2px black;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    gap: 10px;
-    padding: 15px;
     border-radius: 5px;
+    width: 400px;
+    margin-left:700px;
+    margin-top:100px ;
+    gap:10px;
+    padding: 30px;
+    
 }
+.card-detail-dark2 {
+    @extend .card-detail-ligth;
+    background-color: $dark-violet;
+    color: white;
+}
+
 .boton-agregar {
     background-color: rgba(207, 26, 108, 0.5);
     color: rgba(255, 255, 255, 0.783);
