@@ -25,14 +25,16 @@ const ItemDetail = ({character}) =>{
         <br/> Stock : 10
         <br/>Status: {character.status} 
         <br/>Species: {character.species}
-        <br/>NFT Price: 100 U$D
+        <br/>NFT Price: ${character.price}
         <br/>
+        <div className="texts">
         {quantityItemDeatil ? 
         
         <button className="boton-agregar">Go Cart</button>
         :
         <ItemCount onAdd={confirmPurchase} initial={1} stock={10}
         />}
+        </div>
         </p>
     </div>
     )

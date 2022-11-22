@@ -13,12 +13,34 @@
     margin-top:100px ;
     gap:10px;
     padding: 30px;
+    .texts {
+        display: flex;
+        flex-direction: column;
+        button {
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            color: black;
+            background-color: salmon;
+        }
+    }
     
 }
 .card-detail-dark2 {
     @extend .card-detail-ligth;
     background-color: $dark-violet;
     color: white;
+    .texts {
+        display: flex;
+        flex-direction: column;
+        button {
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            background-color: $light-gray;
+            color: white;
+        }
+}
 }
 
 .boton-agregar {

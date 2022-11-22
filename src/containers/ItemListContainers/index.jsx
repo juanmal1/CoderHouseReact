@@ -4,6 +4,8 @@ import './style.scss';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import {ClimbingBoxLoader} from 'react-spinners'
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase/config';
 
 
 export default function ItemListContainer ({greeting}) {
@@ -61,26 +63,44 @@ export default function ItemListContainer ({greeting}) {
 
 
 
-    useEffect(()=> {
-        ( async ()=> {
+    useEffect(() => {
+        (async () => {
             try {
                 console.log(categoryId);
-                
-                let response;
-                if(categoryId){
-                    response = await fetch(`https://rickandmortyapi.com/api/character?species=${categoryId}`);
-                }else{
-                    response = await fetch('https://rickandmortyapi.com/api/character');
+                // let response;
+                /* if (categoryId) {
+                    response = await fetch(
+                        `https://rickandmortyapi.com/api/character/?species=${categoryId}`
+                    );
+                } else {
+                    response = await fetch(
+                        `https://rickandmortyapi.com/api/character`
+                    );
+                } */
+                // const data = await response.json();
+                // console.log(data);
+
+
+                let q;
+                if (categoryId) {
+                    q = query(collection(db, "products"), where("species", "==", categoryId))
+                } else {
+                    q = query(collection(db, "products"));
                 }
-                
-                console.log(response);
-                const data = await response.json();
-                console.log(data);
-                if (data.results) setProducts(data.results)
+
+
+                const querySnapshot = await getDocs(q);
+                const productosFirebase = [];
+                querySnapshot.forEach((doc) => {
+
+                    console.log(doc.id, " => ", doc.data());
+                    productosFirebase.push({...doc.data(), id: doc.id})
+                });
+                setProducts(productosFirebase);
             } catch (error) {
                 console.log(error);
             }
-        })()
+        })();
     }, [categoryId]);
 
     console.log(products);
