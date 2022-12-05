@@ -1,21 +1,25 @@
-@import '../../styles/colors.scss';
+@import "../../styles/colors.scss";
 
 .ul-container {
-    list-style-type: none;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
+    margin: 0;
+    list-style-type: none;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
     height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.li-list {
-    float: left;
+.ul-container-dark {
+    @extend .ul-container;
+    background-color: $dark-brown;
+    border: 1px solid $light-gray;
 }
 
 .li-list a {
-    display: block;
     color: #666;
     text-align: center;
     padding: 14px 16px;
@@ -26,9 +30,30 @@
     background-color: #ddd;
 }
 
-.ul-container-dark {
-    @extend .ul-container;
-    background-image: linear-gradient(0deg, rgba(134,34,195,1) 0%, rgba(3,4,106,1) 85%);
-    border: 1px solid $light-gray;
-    color: #fff;
+.select-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 20px;
+}
+.theme-select-dark {
+    border: 2px solid black;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background-color: $light-gray;
+    color: white;
+    float:none;
+    align-self: center;
+}
+
+.theme-select {
+    padding: 4px 10px;
+    border-radius: 3px;
+    color: black;
+    background-color: #666;
+    float: left;
+    align-self: center;
 }

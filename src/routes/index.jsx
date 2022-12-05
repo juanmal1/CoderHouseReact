@@ -1,10 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "../components/Root";
-import ItemListContainer from "../containers/ItemListContainers";
+import CartContainer from "../containers/CartContainer";
 import ItemDetailContainer from "../containers/ItemDetailContainer";
-
-
+import ItemListContainer from "../containers/ItemListContainer";
 
 const router = createBrowserRouter([
     {
@@ -24,6 +23,10 @@ const router = createBrowserRouter([
                 path: "/detail/:id",
                 element: <ItemDetailContainer/>,
             },
+            {
+                path: "/cart",
+                element: <CartContainer/>
+            }
         ],
     },
 ]);
@@ -38,7 +41,7 @@ export default Router;
 /* import NavBar from "../components/NavBar";
 
 const Router = () => {
-return (
+  return (
     <BrowserRouter>
         <NavBar/>
         <Routes>
@@ -48,7 +51,7 @@ return (
             <Route path="*" element={<h2>Ruta no encontrada</h2>}></Route>
         </Routes>
     </BrowserRouter>
-)
+  )
 }
 
 export default Router */

@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Theme } from "../../contexts/Theme";
+import "./style.scss";
 
 const ItemCount = ({onAdd, stock, initial}) => {
 
     const [count, setCount] = useState(initial);
+    const {themeColor} = useContext(Theme)
 
     const onPlus = () => {
         if (count < stock) setCount(count + 1)
@@ -11,7 +14,7 @@ const ItemCount = ({onAdd, stock, initial}) => {
     const onDecrement = () => {
         if (count > initial) setCount(count - 1)
     }
-    return <div>
+    return <div className={themeColor === "dark" ? "item-count-container-dark" : "item-count-container"}>
         <button onClick={onDecrement}>-</button>
         <span>{count}</span>
         <button onClick={onPlus}>+</button>

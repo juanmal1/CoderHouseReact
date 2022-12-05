@@ -6,14 +6,14 @@ import Router from './routes';
 function App() {
 
   const {themeColor} = useContext(Theme)
+  
   return (
     <div
-    className={themeColor === 'dark' ? 'container-dark' : null}>
-    
-    <Router/>
+      className= {themeColor === 'dark' ? 'container-dark' : null}
+    >
+      <Router/>
     </div>
-
-  );
+  )
 }
 
 export default App;

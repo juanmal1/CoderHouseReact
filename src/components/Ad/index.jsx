@@ -5,14 +5,14 @@ const Ad = ({children}) => {
     <div style={{
         position: 'fixed',
         top: 0,
-        background: 'red',
+        background: 'green',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         width: '100vw',
         height: '100vh',
-        backgroundColor: 'rgba(119, 26, 83, 0.7450980392)',
+        backgroundColor: 'rgba(0,0,0,0.6)',
     }}>
         <div
           style={{
@@ -23,7 +23,7 @@ const Ad = ({children}) => {
             padding: 50,
             width: 900,
             height: 500,
-            backgroundColor: 'rgba(119, 26, 83, 1)',
+            backgroundColor: 'salmon',
           }}
         >
           {children}
